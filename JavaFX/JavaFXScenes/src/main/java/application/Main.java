@@ -4,8 +4,12 @@ package application;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
+import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
@@ -50,10 +54,34 @@ public class Main extends Application {
 		rt.setRotate(45);
 		
 		
+		  Polygon triangle = new Polygon();
+		  triangle.getPoints().setAll(
+		    200.0,200.0,
+		    300.0,300.0,
+		    200.0,300.0
+		    );
+		  triangle.setFill(Color.BLUE);
+		  
+		  Circle circle = new Circle();
+		  circle.setCenterX(350);
+		  circle.setCenterY(350);
+		  circle.setRadius(50);
+		  circle.setFill(Color.RED);
+		  
+		  ImageView pizza = new ImageView("pizza2.png");
+		  pizza.setX(400);
+		  pizza.setY(400);
+		  pizza.setFitWidth(100);
+		  pizza.setFitHeight(100);
+		
+		
 		//Add components or leaf node to root
 		root.getChildren().add(text);
 		root.getChildren().add(line);
 		root.getChildren().add(rt);
+		root.getChildren().add(triangle);
+		root.getChildren().add(circle);
+		root.getChildren().add(pizza);
 		
 		stage.setResizable(false);
 		stage.setScene(scene);
